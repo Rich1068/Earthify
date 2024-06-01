@@ -33,18 +33,21 @@ namespace Earthify.View
             {
                 actionID = obj.Id;
                 txtDescription.Text = obj.Description;
-                txtCategory.Text = obj.Category;
                 txtImpactlvl.Text = obj.Impact_Level;
                 txtImpactdesc.Text = obj.Impact_Description;
                 txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
+            }
+            if (txtCategory.ItemsSource is IList<string> categories)
+            {
+                txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
             }
         }
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {
             ActionModel obj = new ActionModel();
             obj.Description = txtDescription.Text;
-            obj.Category = txtCategory.Text;
+            obj.Category = (string)txtCategory.SelectedItem;
             obj.Impact_Level = txtImpactlvl.Text;
             obj.Impact_Description = txtImpactdesc.Text;
             obj.Frequency = txtFrequency.Text;

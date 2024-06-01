@@ -12,5 +12,12 @@ namespace Earthify.Model
         public string Impact_Level { get; set; }
         public string Impact_Description { get; set; }
         public string Frequency { get; set; }
+        public string ActionCode
+        {
+            get
+            {
+                return (string.IsNullOrEmpty(Category) ? "" : Category.Substring(0, 1)) + 00 + Id;
+            }
+        }
     }
 }
