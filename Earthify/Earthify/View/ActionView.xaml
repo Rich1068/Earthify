@@ -12,9 +12,9 @@
             <Picker x:Name="txtCategory" Title="Select Category">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Low</x:String>
-                        <x:String>Medium</x:String>
-                        <x:String>High</x:String>
+                        <x:String>Water</x:String>
+                        <x:String>Earth</x:String>
+                        <x:String>Wind</x:String>
                         <!-- Add more categories here -->
                     </x:Array>
                 </Picker.ItemsSource>
