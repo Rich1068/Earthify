@@ -10,6 +10,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using System.Xml.Linq;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace Earthify.View
 {
@@ -33,7 +35,6 @@ namespace Earthify.View
             {
                 actionID = obj.Id;
                 txtDescription.Text = obj.Description;
-                txtImpactlvl.Text = obj.Impact_Level;
                 txtImpactdesc.Text = obj.Impact_Description;
                 txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
@@ -41,14 +42,19 @@ namespace Earthify.View
             if (txtCategory.ItemsSource is IList<string> categories)
             {
                 txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
+            }
+            if (txtCategory.ItemsSource is IList<string> impactlvl)
+            {
+                txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
+            }
         }
-        }
+        
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {
             ActionModel obj = new ActionModel();
             obj.Description = txtDescription.Text;
             obj.Category = (string)txtCategory.SelectedItem;
-            obj.Impact_Level = txtImpactlvl.Text;
+            obj.Impact_Level = (string)txtImpactlvl.SelectedItem;
             obj.Impact_Description = txtImpactdesc.Text;
             obj.Frequency = txtFrequency.Text;
 

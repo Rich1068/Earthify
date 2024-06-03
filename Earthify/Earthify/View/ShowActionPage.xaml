@@ -44,19 +44,19 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Text="{Binding ActionCode}" Grid.Row="0" Grid.Column="0"/>
-                                    <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"/>
                                     <Label Text="{Binding Category}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
-                                    <Label Grid.Row="0" Grid.Column="3">
+                                    <Label Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Impact_Level}"/>
-                                                <Span Text=" ( "/>
+                                                <Span Text=" ("/>
                                                 <Span Text="{Binding Impact_Description}"/>
-                                                <Span Text=" ) "/>
+                                                <Span Text=")"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="{Binding Frequency}" Grid.Row="0" Grid.Column="4"/>
+                                    <Label Text="{Binding Frequency}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center"/>
                                 </Grid>
                             </Frame>
                         </ViewCell>

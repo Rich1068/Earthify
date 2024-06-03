@@ -16,7 +16,7 @@ namespace Earthify.Model
         {
             get
             {
-                return (string.IsNullOrEmpty(Category) ? "" : Category.Substring(0, 1)) + 00 + Id;
+                return (string.IsNullOrEmpty(Category) ? "" : Category.Substring(0, 1)) + "00" + Id;
             }
         }
     }
