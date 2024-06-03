@@ -41,7 +41,7 @@ namespace Earthify.View
             if (txtCategory.ItemsSource is IList<string> categories)
             {
                 txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
-            }
+        }
         }
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {

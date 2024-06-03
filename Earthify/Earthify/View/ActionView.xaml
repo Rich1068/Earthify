@@ -6,7 +6,7 @@
         <StackLayout>
             <Label Text="ID" />
             <!--<Entry x:Name="employeeID" Placeholder="Enter ID No."/> -->
-            <Label Text="Description" />
+            <Label Text="Description" FontAttributes="Bold" TextColor="#254336" />
             <Entry x:Name="txtDescription" Placeholder="Enter Description"/>
             <Label Text="Category" />
             <Picker x:Name="txtCategory" Title="Select Category">
@@ -21,9 +21,9 @@
             </Picker>
             <Label Text="Impact Level" />
             <Entry x:Name="txtImpactlvl" Placeholder="Enter Impact Level"/>
-            <Label Text="Impact Description" />
+            <Label Text="Impact Description" FontAttributes="Bold" TextColor="#254336" />
             <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description"/>
-            <Label Text="Frequency" />
+            <Label Text="Frequency" FontAttributes="Bold" TextColor="#254336" />
             <Entry x:Name="txtFrequency" Placeholder="Enter Frequency"/>
             <Button Text="Save Record" Clicked="btnSaveUpdate_Clicked"/>
         </StackLayout>
