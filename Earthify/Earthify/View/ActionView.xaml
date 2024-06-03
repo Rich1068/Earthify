@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Earthify.View.ActionView">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Entry x:Name="employeeID" Placeholder="Enter ID No."/> -->
+            <Label Text="Description" FontAttributes="Bold" TextColor="#254336" />
+            <Entry x:Name="txtDescription" Placeholder="Enter Description"/>
+            <Label Text="Category" FontAttributes="Bold" TextColor="#254336" />
+            <Entry x:Name="txtCategory" Placeholder="Enter Category"/>
+            <Label Text="Impact Level" FontAttributes="Bold" TextColor="#254336" />
+            <Entry x:Name="txtImpactlvl" Placeholder="Enter Impact Level"/>
+            <Label Text="Impact Description" FontAttributes="Bold" TextColor="#254336" />
+            <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description"/>
+            <Label Text="Frequency" FontAttributes="Bold" TextColor="#254336" />
+            <Entry x:Name="txtFrequency" Placeholder="Enter Frequency"/>
+            <Button Text="Save Record" Clicked="btnSaveUpdate_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

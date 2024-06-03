@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Earthify.View.ShowActionPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Add New Record" BackgroundColor="#B7B597" Clicked="btnAddRecord"/>
+
+            <!-- Grid headers -->
+            <Grid BackgroundColor="#6B8A7A">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Description" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="Category" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="Impact Level and Description" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="Frequency" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+            <!-- ListView with data -->
+            <ListView x:Name="lstData" HasUnevenRows="True" ItemSelected="lsdata_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HorizontalOptions="Center" VerticalOptions="Center">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="0"/>
+                                    <Label Text="{Binding Category}" Grid.Row="0" Grid.Column="1"/>
+                                    <Label Grid.Row="0" Grid.Column="2">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Impact_Level}"/>
+                                                <Span Text=" - "/>
+                                                <Span Text="{Binding Impact_Description}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding Frequency}" Grid.Row="0" Grid.Column="3"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
