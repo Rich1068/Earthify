@@ -4,6 +4,7 @@
              x:Class="Earthify.View.ViewAction">
     <ContentPage.Content>
         <StackLayout x:Name="stackLayout">
+
             <Grid Margin="20, 40, 0, 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".8*"/>
@@ -29,7 +30,7 @@
                 <Label Grid.Row="3" Grid.Column="0" Text="Impact Level:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
                 <Label Grid.Row="3" Grid.Column="1" x:Name="lblImpactlvl" Text="Impact Level" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Text="Impact Description:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+                <Label Grid.Row="4" Grid.Column="0" Text="Impact Desc:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
                 <Label Grid.Row="4" Grid.Column="1" x:Name="lblImpactdesc" Text="Impact Description" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
 
                 <Label Grid.Row="5" Grid.Column="0" Text="Frequency:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
@@ -57,6 +58,11 @@
                     </Button.Background>
                 </Button>
             </AbsoluteLayout>
+
+            <ProgressBar x:Name="progressBar" Progress="0" HeightRequest="20" Margin="20, 20, 20, 0"/>
+
+            <!-- Update Progress Button -->
+            <Button x:Name="contributeButton" Text="Contribute" Clicked="OnUpdateProgressClicked" Margin="20, 20, 20, 0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

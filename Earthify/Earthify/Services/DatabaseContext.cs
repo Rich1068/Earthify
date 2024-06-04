@@ -1,16 +1,14 @@
 ﻿using Earthify.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Sqlite;
 using System.IO;
+using Xamarin.Essentials;
 
 namespace Earthify.Services
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<ActionModel> Action { get; set; }
+        public DbSet<ActionModel> Actionss { get; set; }
+
         public DatabaseContext()
         {
             this.Database.EnsureCreated();
@@ -18,8 +16,10 @@ namespace Earthify.Services
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "Action.db");
-            optionsBuilder.UseSqlite($"Filename={dbpath}");
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Actionss.db");
+            optionsBuilder.UseSqlite($"Filename={dbPath}");
         }
+
+
     }
 }

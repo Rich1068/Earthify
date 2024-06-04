@@ -72,14 +72,23 @@
                         <Image Source="drawable/entry.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
                     </Grid>
-                    
+
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Image Source="drawable/frequency.png" HeightRequest="24" VerticalOptions="Center"/>
-                        <Entry x:Name="txtFrequency" Placeholder="Enter Frequency" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                        <Picker x:Name="txtFrequency" Title="Select Frequency" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Always</x:String>
+                                    <x:String>Often</x:String>
+                                    <x:String>Sometimes</x:String>
+                                    <x:String>Rarely</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Grid>
                 </StackLayout>
             </Frame>

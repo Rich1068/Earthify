@@ -20,20 +20,20 @@ namespace Earthify.ViewModel
         public int InsertAction(ActionModel obj)
         {
             var _dbContext = getContext();
-            _dbContext.Action.Add(obj);
+            _dbContext.Actionss.Add(obj);
             int c = _dbContext.SaveChanges();
             return c;
         }
         public async Task<List<ActionModel>> GetAllAction()
         {
             var _dbContext = getContext();
-            var res = await _dbContext.Action.ToListAsync();
+            var res = await _dbContext.Actionss.ToListAsync();
             return res;
         }
         public async Task<int> UpdateAction(ActionModel obj)
         {
             var _dbContext = getContext();
-            _dbContext.Action.Update(obj);
+            _dbContext.Actionss.Update(obj);
             int c = await _dbContext.SaveChangesAsync();
             return c;
         }
@@ -41,14 +41,14 @@ namespace Earthify.ViewModel
         public int DeleteAction(ActionModel obj)
         {
             var _dbContext = getContext();
-            _dbContext.Action.Remove(obj);
+            _dbContext.Actionss.Remove(obj);
             int c = _dbContext.SaveChanges();
             return c;
         }
         public async Task<ActionModel> ViewAction(int id)
         {
             var _dbContext = getContext();
-            var action = await _dbContext.Action.FindAsync(id);
+            var action = await _dbContext.Actionss.FindAsync(id);
             return action;
         }
 

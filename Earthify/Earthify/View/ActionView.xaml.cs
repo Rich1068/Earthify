@@ -36,7 +36,6 @@ namespace Earthify.View
                 actionID = obj.Id;
                 txtDescription.Text = obj.Description;
                 txtImpactdesc.Text = obj.Impact_Description;
-                txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
             }
             if (txtCategory.ItemsSource is IList<string> categories)
@@ -47,6 +46,10 @@ namespace Earthify.View
             {
                 txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
             }
+            if (txtFrequency.ItemsSource is IList<string> frequency)
+            {
+                txtFrequency.SelectedItem = frequency.FirstOrDefault(c => c == obj.Frequency);
+            }
         }
 
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
@@ -56,7 +59,7 @@ namespace Earthify.View
             obj.Category = (string)txtCategory.SelectedItem;
             obj.Impact_Level = (string)txtImpactlvl.SelectedItem;
             obj.Impact_Description = txtImpactdesc.Text;
-            obj.Frequency = txtFrequency.Text;
+            obj.Frequency = (string)txtFrequency.SelectedItem;
 
             if (_isUpdate)
             {
