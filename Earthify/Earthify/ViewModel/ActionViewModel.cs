@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using System.Windows.Input;
+using Xamarin.Essentials;
 
 namespace Earthify.ViewModel
 {
@@ -43,5 +45,12 @@ namespace Earthify.ViewModel
             int c = _dbContext.SaveChanges();
             return c;
         }
+        public async Task<ActionModel> ViewAction(int id)
+        {
+            var _dbContext = getContext();
+            var action = await _dbContext.Action.FindAsync(id);
+            return action;
+        }
+
     }
 }

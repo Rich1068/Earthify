@@ -14,16 +14,6 @@
                    Margin="0,0,0,20"/>
             <Frame BorderColor="green" CornerRadius="15" Padding="20" BackgroundColor="#FFFFFF">
                 <StackLayout>
-                    
-
-                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Image Source="drawable/id.png" HeightRequest="24" VerticalOptions="Center"/>
-                        <Entry Placeholder="Enter ID" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
-                    </Grid>
 
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
@@ -41,7 +31,17 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Image Source="drawable/category.png" HeightRequest="24" VerticalOptions="Center"/>
-                        <Picker x:Name="txtCategory" Title="Select Category" HorizontalOptions="FillAndExpand" TextColor="#008000" FontSize="Small" BackgroundColor="Transparent" Grid.Column="1"/>
+                        <Picker x:Name="txtCategory" Title="Select Category" HorizontalOptions="FillAndExpand" TextColor="#008000" FontSize="Small" BackgroundColor="Transparent" Grid.Column="1">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Trees</x:String>
+                                    <x:String>Ocean</x:String>
+                                    <x:String>Waste</x:String>
+                                    <x:String>Others</x:String>
+                                    <!-- Add more categories here -->
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Grid>
 
                
@@ -51,7 +51,16 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Image Source="drawable/earthimpact.png" HeightRequest="24" VerticalOptions="Center"/>
-                        <Entry x:Name="txtImpactlvl" Placeholder="Enter Impact Level" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                        <Picker x:Name="txtImpactlvl" Title="Select Impact Level" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Low</x:String>
+                                    <x:String>Medium</x:String>
+                                    <x:String>High</x:String>
+                                    <x:String>Extreme</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
                     </Grid>
 
 
@@ -63,7 +72,7 @@
                         <Image Source="drawable/entry.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
                     </Grid>
-
+                    
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />

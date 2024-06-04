@@ -12,6 +12,8 @@ namespace Earthify.Model
         public string Impact_Level { get; set; }
         public string Impact_Description { get; set; }
         public string Frequency { get; set; }
+
+
         public string ActionCode
         {
             get

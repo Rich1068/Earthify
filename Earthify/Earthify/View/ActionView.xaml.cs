@@ -2,6 +2,10 @@
 using Earthify.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
@@ -17,18 +21,16 @@ namespace Earthify.View
         ActionViewModel _viewModel;
         bool _isUpdate;
         int actionID;
-
         public ActionView()
         {
             InitializeComponent();
             _viewModel = new ActionViewModel();
             _isUpdate = false;
-
-            PopulateCategoryPicker();
         }
-
-        public ActionView(ActionModel obj) : this()
+        public ActionView(ActionModel obj)
         {
+            InitializeComponent();
+            _viewModel = new ActionViewModel();
             if (obj != null)
             {
                 actionID = obj.Id;
@@ -36,16 +38,8 @@ namespace Earthify.View
                 txtImpactdesc.Text = obj.Impact_Description;
                 txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
-
-                // Set the selected category
-                txtCategory.SelectedItem = obj.Category;
             }
-        }
-
-        private void PopulateCategoryPicker()
-        {
-            // Populate the picker with categories
-            txtCategory.ItemsSource = new List<string>
+            if (txtCategory.ItemsSource is IList<string> categories)
             {
                 txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
             }
@@ -54,7 +48,7 @@ namespace Earthify.View
                 txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
             }
         }
-        
+
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {
             ActionModel obj = new ActionModel();
@@ -68,13 +62,16 @@ namespace Earthify.View
             {
                 obj.Id = actionID;
                 await _viewModel.UpdateAction(obj);
+
             }
             else
             {
                 _viewModel.InsertAction(obj);
             }
 
+
             await this.Navigation.PopAsync();
         }
+      
     }
 }

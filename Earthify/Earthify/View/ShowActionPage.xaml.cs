@@ -40,10 +40,13 @@ namespace Earthify.View
             if (e.SelectedItem != null)
             {
                 ActionModel obj = (ActionModel)e.SelectedItem;
-                string res = await DisplayActionSheet("Operation", "Cancel", null, "Update", "Delete");
+                string res = await DisplayActionSheet("Operation", "Cancel", null, "View", "Update", "Delete");
 
                 switch (res)
                 {
+                    case "View":
+                        await this.Navigation.PushAsync(new ViewAction(obj));
+                        break;
                     case "Update":
                         await this.Navigation.PushAsync(new ActionView(obj));
                         break;
