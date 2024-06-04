@@ -37,7 +37,7 @@
                                     <x:String>Trees</x:String>
                                     <x:String>Ocean</x:String>
                                     <x:String>Waste</x:String>
-                                    <x:String>Others</x:String>
+                                    <x:String>Miscellaneous</x:String>
                                     <!-- Add more categories here -->
                                 </x:Array>
                             </Picker.ItemsSource>

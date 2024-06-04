@@ -67,7 +67,7 @@ namespace Earthify.View
                 case "ocean":
                     backgroundColor = Color.LightBlue;
                     break;
-                case "waste":
+                case "Miscellaneous":
                     backgroundColor = Color.Beige;
                     break;
                 default:
