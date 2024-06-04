@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Linq;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using System.Xml.Linq;
+using System.IO;
+using Xamarin.Essentials;
 
 namespace Earthify.View
 {
@@ -30,7 +33,6 @@ namespace Earthify.View
             {
                 actionID = obj.Id;
                 txtDescription.Text = obj.Description;
-                txtImpactlvl.Text = obj.Impact_Level;
                 txtImpactdesc.Text = obj.Impact_Description;
                 txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
@@ -45,23 +47,22 @@ namespace Earthify.View
             // Populate the picker with categories
             txtCategory.ItemsSource = new List<string>
             {
-                "Low",
-                "Medium",
-                "High"
-                // Add more categories here if needed
-            };
+                txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
+            }
+            if (txtCategory.ItemsSource is IList<string> impactlvl)
+            {
+                txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
+            }
         }
-
+        
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {
-            ActionModel obj = new ActionModel
-            {
-                Description = txtDescription.Text,
-                Category = (string)txtCategory.SelectedItem,
-                Impact_Level = txtImpactlvl.Text,
-                Impact_Description = txtImpactdesc.Text,
-                Frequency = txtFrequency.Text
-            };
+            ActionModel obj = new ActionModel();
+            obj.Description = txtDescription.Text;
+            obj.Category = (string)txtCategory.SelectedItem;
+            obj.Impact_Level = (string)txtImpactlvl.SelectedItem;
+            obj.Impact_Description = txtImpactdesc.Text;
+            obj.Frequency = txtFrequency.Text;
 
             if (_isUpdate)
             {
