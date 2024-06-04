@@ -2,14 +2,9 @@
 using Earthify.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using System.Xml.Linq;
+using System.Linq;
 
 namespace Earthify.View
 {
@@ -19,16 +14,18 @@ namespace Earthify.View
         ActionViewModel _viewModel;
         bool _isUpdate;
         int actionID;
+
         public ActionView()
         {
             InitializeComponent();
             _viewModel = new ActionViewModel();
             _isUpdate = false;
+
+            PopulateCategoryPicker();
         }
-        public ActionView(ActionModel obj)
+
+        public ActionView(ActionModel obj) : this()
         {
-            InitializeComponent();
-            _viewModel = new ActionViewModel();
             if (obj != null)
             {
                 actionID = obj.Id;
@@ -37,32 +34,44 @@ namespace Earthify.View
                 txtImpactdesc.Text = obj.Impact_Description;
                 txtFrequency.Text = obj.Frequency;
                 _isUpdate = true;
+
+                // Set the selected category
+                txtCategory.SelectedItem = obj.Category;
             }
-            if (txtCategory.ItemsSource is IList<string> categories)
+        }
+
+        private void PopulateCategoryPicker()
+        {
+            // Populate the picker with categories
+            txtCategory.ItemsSource = new List<string>
             {
-                txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
+                "Low",
+                "Medium",
+                "High"
+                // Add more categories here if needed
+            };
         }
-        }
+
         private async void btnSaveUpdate_Clicked(object sender, EventArgs e)
         {
-            ActionModel obj = new ActionModel();
-            obj.Description = txtDescription.Text;
-            obj.Category = (string)txtCategory.SelectedItem;
-            obj.Impact_Level = txtImpactlvl.Text;
-            obj.Impact_Description = txtImpactdesc.Text;
-            obj.Frequency = txtFrequency.Text;
+            ActionModel obj = new ActionModel
+            {
+                Description = txtDescription.Text,
+                Category = (string)txtCategory.SelectedItem,
+                Impact_Level = txtImpactlvl.Text,
+                Impact_Description = txtImpactdesc.Text,
+                Frequency = txtFrequency.Text
+            };
 
             if (_isUpdate)
             {
                 obj.Id = actionID;
                 await _viewModel.UpdateAction(obj);
-
             }
             else
             {
                 _viewModel.InsertAction(obj);
             }
-
 
             await this.Navigation.PopAsync();
         }

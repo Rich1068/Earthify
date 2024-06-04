@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Earthify.View.TitlePage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#124076">
+
+            <Image Source="drawable/TextWithLogo.png" 
+                   VerticalOptions="Start" 
+                   Aspect="AspectFit"
+                   HeightRequest="240"
+                   HorizontalOptions="Center"
+                   Margin="0,40,10,20"/>
+            <!-- Adjust top margin to add more space -->
+            <Image Source="drawable/EarthLine.png" 
+                   VerticalOptions="Start" 
+                   Aspect="AspectFit"
+                   HeightRequest="40"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,0"/>
+
+            <!-- Existing content centered within the StackLayout -->
+            <Image Source="drawable/Text.png" 
+       VerticalOptions="Start" 
+       Aspect="AspectFit"
+       HeightRequest="250"
+       HorizontalOptions="Center"
+       Margin="0,40,0,20"/>
+
+
+            <!-- Set text color to white for better visibility -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

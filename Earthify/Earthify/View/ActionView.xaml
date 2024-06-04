@@ -1,31 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Earthify.View.ActionView">
+             x:Class="Earthify.View.ActionView"
+             BackgroundColor="#124076">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="ID" />
-            <!--<Entry x:Name="employeeID" Placeholder="Enter ID No."/> -->
-            <Label Text="Description" FontAttributes="Bold" TextColor="#254336" />
-            <Entry x:Name="txtDescription" Placeholder="Enter Description"/>
-            <Label Text="Category" />
-            <Picker x:Name="txtCategory" Title="Select Category">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Water</x:String>
-                        <x:String>Earth</x:String>
-                        <x:String>Wind</x:String>
-                        <!-- Add more categories here -->
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-            <Label Text="Impact Level" />
-            <Entry x:Name="txtImpactlvl" Placeholder="Enter Impact Level"/>
-            <Label Text="Impact Description" FontAttributes="Bold" TextColor="#254336" />
-            <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description"/>
-            <Label Text="Frequency" FontAttributes="Bold" TextColor="#254336" />
-            <Entry x:Name="txtFrequency" Placeholder="Enter Frequency"/>
-            <Button Text="Save Record" Clicked="btnSaveUpdate_Clicked"/>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+
+            <!-- Image at the top -->
+            <Image Source="drawable/Logo.png"
+                   Aspect="AspectFit"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+            <Frame BorderColor="green" CornerRadius="15" Padding="20" BackgroundColor="#FFFFFF">
+                <StackLayout>
+                    
+
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/id.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry Placeholder="Enter ID" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/description.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry x:Name="txtDescription" Placeholder="Enter Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                    </Grid>
+
+         
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/category.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Picker x:Name="txtCategory" Title="Select Category" HorizontalOptions="FillAndExpand" TextColor="#008000" FontSize="Small" BackgroundColor="Transparent" Grid.Column="1"/>
+                    </Grid>
+
+               
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/earthimpact.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry x:Name="txtImpactlvl" Placeholder="Enter Impact Level" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                    </Grid>
+
+
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/entry.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="drawable/frequency.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry x:Name="txtFrequency" Placeholder="Enter Frequency" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+
+            <!-- Space between container and button -->
+            <BoxView HeightRequest="30" />
+
+            <!-- Button for Save Record -->
+ <Button Text="Save Record" 
+        Clicked="btnSaveUpdate_Clicked"
+        BackgroundColor="#008000"
+        TextColor="#ffffff"
+        CornerRadius="15"
+        HeightRequest="40"
+        HorizontalOptions="Center"
+        FontSize="Small"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
