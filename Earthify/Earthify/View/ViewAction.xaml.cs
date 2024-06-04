@@ -96,18 +96,16 @@ namespace Earthify.View
             if (progressBar.Progress >= 1.0)
             {
                 bool deleteAction = await DisplayAlert("Congratulations", "Congratulations for Completing the Task. Do you want to delete the task and do another one?", "Yes", "No");
-                contributeButton.IsEnabled = false;
-                int result = DeleteAction(actionId); // Call the DeleteAction method
-                if (result > 0)
+                if (deleteAction == true)
                 {
+                    contributeButton.IsEnabled = false;
                     await DisplayAlert("Success", "Action deleted successfully.", "OK");
+                    int result = DeleteAction(actionId); 
                     await Navigation.PopAsync();
 
-                }
-                else
+                } else
                 {
-                    await DisplayAlert("Error", "Failed to delete action.", "OK");
-                    await Navigation.PopAsync();
+
                 }
 
             }
