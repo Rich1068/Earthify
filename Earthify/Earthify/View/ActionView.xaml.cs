@@ -37,18 +37,21 @@ namespace Earthify.View
                 txtDescription.Text = obj.Description;
                 txtImpactdesc.Text = obj.Impact_Description;
                 _isUpdate = true;
-            }
-            if (txtCategory.ItemsSource is IList<string> categories)
-            {
-                txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
-            }
-            if (txtCategory.ItemsSource is IList<string> impactlvl)
-            {
-                txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
-            }
-            if (txtFrequency.ItemsSource is IList<string> frequency)
-            {
-                txtFrequency.SelectedItem = frequency.FirstOrDefault(c => c == obj.Frequency);
+
+                if (txtCategory.ItemsSource is IList<string> categories && categories.Any())
+                {
+                    txtCategory.SelectedItem = categories.FirstOrDefault(c => c == obj.Category);
+                }
+
+                if (txtImpactlvl.ItemsSource is IList<string> impactlvl && impactlvl.Any())
+                {
+                    txtImpactlvl.SelectedItem = impactlvl.FirstOrDefault(c => c == obj.Impact_Level);
+                }
+
+                if (txtFrequency.ItemsSource is IList<string> frequency && frequency.Any())
+                {
+                    txtFrequency.SelectedItem = frequency.FirstOrDefault(c => c == obj.Frequency);
+                }
             }
         }
 

@@ -38,7 +38,6 @@
                                     <x:String>Ocean</x:String>
                                     <x:String>Waste</x:String>
                                     <x:String>Miscellaneous</x:String>
-                                    <!-- Add more categories here -->
                                 </x:Array>
                             </Picker.ItemsSource>
                         </Picker>
