@@ -18,9 +18,9 @@ namespace Earthify
 
             List<ImageModel> images = new List<ImageModel>()
             {
-                new ImageModel(){Title="Image 1",Url="https://i.postimg.cc/pVq52qVH/image.png"},
-                new ImageModel(){Title="Image 2",Url="https://i.postimg.cc/B6yWgrc3/image.png"},
-                new ImageModel(){Title="Image 3",Url="https://i.postimg.cc/zfV0jVdL/image.png"}
+                new ImageModel(){Title="Image 1",Url="drawable/page1.png"},
+                new ImageModel(){Title="Image 2",Url="drawable/page2.png"},
+                new ImageModel(){Title="Image 3",Url="drawable/page3.png"}
             };
 
             Carousel.ItemsSource = images;

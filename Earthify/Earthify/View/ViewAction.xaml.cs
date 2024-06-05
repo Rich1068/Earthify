@@ -11,7 +11,6 @@ namespace Earthify.View
     public partial class ViewAction : ContentPage
     {
         private double progressIncrement;
-        private string actionCode;
         private DatabaseContext _dbContext;
         int actionId;
 
