@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Earthify.MainPage">
 
-    <StackLayout BackgroundColor="#222222">
+    <StackLayout BackgroundColor="#124076">
         <CarouselView x:Name="Carousel" BackgroundColor="Black" IndicatorView="IndicatorView" HeightRequest="1080">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
@@ -12,14 +12,14 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
 
-        <Button Text="Learn More" TextColor="#ffcc00" BackgroundColor="White" Margin="15,10,15,10" CornerRadius="7" HorizontalOptions="FillAndExpand"  Clicked="btnViewRecord_Clicked" />
+        <Button Text="Contribute Now" TextColor="white" BackgroundColor="green" Margin="15,10,15,10" CornerRadius="10" HorizontalOptions="FillAndExpand"  Clicked="btnViewRecord_Clicked" />
 
         <IndicatorView x:Name="IndicatorView"
             IndicatorColor="Transparent"
             SelectedIndicatorColor="Transparent"
             IndicatorSize="0"
             VerticalOptions="Center" 
-            BackgroundColor="#222222"/>
+            BackgroundColor="#124076"/>
     </StackLayout>
 
 </ContentPage>
