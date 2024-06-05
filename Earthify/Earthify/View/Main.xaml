@@ -5,9 +5,10 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              x:Class="Earthify.View.Main"
              android:TabbedPage.ToolbarPlacement="Bottom"
-             BarBackground="green"
-             SelectedTabColor="White"
-             UnselectedTabColor="White">
+             BarBackgroundColor="green"
+             SelectedTabColor="yellow"
+             UnselectedTabColor="white"
+            Grid.Row="0" Grid.Column="0" HeightRequest="20">
     <local:TitlePage Title="Title"/>
     <local:ShowActionPage Title="List"/>
 </TabbedPage>

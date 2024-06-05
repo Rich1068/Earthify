@@ -75,7 +75,7 @@ namespace Earthify.View
                     break;
             }
 
-            stackLayout.BackgroundColor = backgroundColor;
+       
         }
 
         private async void OnUpdateProgressClicked(object sender, EventArgs e)

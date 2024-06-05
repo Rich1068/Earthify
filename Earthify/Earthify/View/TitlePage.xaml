@@ -3,14 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Earthify.View.TitlePage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#124076">
 
-            <Image Source="drawable/TextWithLogo.png" 
-                   VerticalOptions="Start" 
-                   Aspect="AspectFit"
-                   HeightRequest="240"
-                   HorizontalOptions="Center"
-                   Margin="0,40,10,20"/>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="40" BackgroundColor="#124076">
+                <!-- Frame with corner radius and clipping bounds -->
+                <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
+                   HorizontalOptions="Center" Margin="0,0,0,10"
+                   WidthRequest="350" HeightRequest="350">
+                    <Grid>
+                        <!-- Background Image -->
+                        <Image Source="ocean.png" Aspect="AspectFill" />
+                        <!-- Foreground Image -->
+                        <Image Source="drawable/TextWithLogo.png" 
+                           VerticalOptions="Center" 
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center" 
+                           Margin="10"/>
+                    </Grid>
+                </Frame>
+
+ 
             <!-- Adjust top margin to add more space -->
             <Image Source="drawable/EarthLine.png" 
                    VerticalOptions="Start" 

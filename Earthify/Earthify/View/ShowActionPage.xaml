@@ -1,68 +1,107 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Earthify.View.ShowActionPage">
-    <ContentPage.Content>
-        <StackLayout  BackgroundColor="#B7B597">
-            <Button Text="Add New Record" BackgroundColor="#B7B597" Clicked="btnAddRecord"/>
-            
-            <!-- Grid headers -->
-            <Grid BackgroundColor="#6B8A7A">
+             x:Class="Earthify.View.ShowActionPage"
+             BackgroundColor="#124076">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Action Code" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-                <Label Text="Description" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-                <Label Text="Category" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-                <Label Text="Impact Level" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="3"  VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-                <Label Text="Frequency" TextColor="White" FontAttributes="Bold" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-            </Grid>
-            <!-- ListView with data -->
-            <ListView x:Name="lstData" HasUnevenRows="True" ItemSelected="lsdata_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding ActionCode}" Grid.Row="0" Grid.Column="0"/>
-                                    <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"/>
-                                    <Label Text="{Binding Category}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
-                                    <Label Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Impact_Level}"/>
-                                                <Span Text=" ("/>
-                                                <Span Text="{Binding Impact_Description}"/>
-                                                <Span Text=")"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                    <Label Text="{Binding Frequency}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center"/>
-                                </Grid>
-                            </Frame>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20" BackgroundColor="#124076">
+
+            <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
+                   HorizontalOptions="Center" Margin="0,0,0,10">
+                <Grid WidthRequest="500" HeightRequest="400">
+                    <!-- Background Image -->
+                    <Image Source="trees.png" Aspect="AspectFill" />
+                    <!-- Foreground Image -->
+                    <Image Source="drawable/textearth.png" 
+                           VerticalOptions="Center" 
+                           Aspect="AspectFit"
+                           HorizontalOptions="Center" 
+                           Margin="10,10,10,10"/>
+                </Grid>
+            </Frame>
+
+            <!-- Frame container similar to the previous example -->
+            <Frame BorderColor="#124076" CornerRadius="15" Padding="20" BackgroundColor="#FFFFFF">
+                <StackLayout>
+                    <!-- Grid headers without box container -->
+                    <Grid BackgroundColor="#ffff" Padding="10" Margin="0,0,0,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Action Code" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                        <Label Text="Description" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                        <Label Text="Category" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                        <Label Text="Impact Level" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                        <Label Text="Frequency" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                    </Grid>
+                    <Image Source="drawable/EarthLine.png" 
+                           VerticalOptions="Start" 
+                           Aspect="AspectFit"
+                           HeightRequest="30"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,0"/>
+
+                    <!-- ListView with data -->
+                    <ListView x:Name="lstData" HasUnevenRows="True" ItemSelected="lsdata_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame BorderColor="#124076" CornerRadius="10" Padding="10" Margin="0,0,0,10" BackgroundColor="#ADD8E6">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding ActionCode}" Grid.Row="0" Grid.Column="0" FontSize="Small"/>
+                                            <Label Text="{Binding Description}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start" FontSize="Small"/>
+                                            <Label Text="{Binding Category}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" FontSize="Small"/>
+                                            <Label Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="Center" FontSize="Small">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{Binding Impact_Level}"/>
+                                                        <Span Text=" ("/>
+                                                        <Span Text="{Binding Impact_Description}"/>
+                                                        <Span Text=")"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Label Text="{Binding Frequency}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Small"/>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="30" />
+
+            <!-- Button at the top -->
+            <Button Text="Add New Record"
+                    BackgroundColor="green"
+                    TextColor="#ffff"
+                    Clicked="btnAddRecord"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,0,0,20"
+                    FontSize="Small"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

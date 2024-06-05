@@ -3,53 +3,96 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Earthify.View.ViewAction">
     <ContentPage.Content>
-        <StackLayout x:Name="stackLayout">
+        <StackLayout BackgroundColor="#124076" Padding="20">
 
-            <Grid Margin="20, 40, 0, 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".8*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+            <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
+               HorizontalOptions="Center" Margin="0,0,0,10"
+               WidthRequest="350" HeightRequest="350">
+                <Grid>
+                    <!-- Background Image -->
+                    <Image Source="wastecleaning.png" Aspect="AspectFill" />
+                    <!-- Foreground Image -->
+                    <Image Source="drawable/logoblack.png" 
+                        WidthRequest="300" HeightRequest="300"   
+                       VerticalOptions="Center" 
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" 
+                       Margin="10"/>
+                </Grid>
+            </Frame>
 
-                <Label Grid.Row="0" Grid.Column="0" Text="Action Code:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="0" Grid.Column="1" x:Name="lblActionCode" Text="Action Code" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+            <Frame BackgroundColor="White" CornerRadius="10" Margin="0, 20, 0, 0">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                <Label Grid.Row="1" Grid.Column="0" Text="Description:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="1" Grid.Column="1" x:Name="lblDescription" Text="Description" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="2" Grid.Column="0" Text="Category:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="2" Grid.Column="1" x:Name="lblCategory" Text="Category" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+                    <Image Source="drawable/id.png" Grid.Row="0" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Action Code:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="0" Grid.Column="2" x:Name="lblActionCode" Text="{Binding ActionCode}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                <Label Grid.Row="3" Grid.Column="0" Text="Impact Level:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="3" Grid.Column="1" x:Name="lblImpactlvl" Text="Impact Level" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+                    <Image Source="drawable/description.png" Grid.Row="1" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="Description:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="1" Grid.Column="2" x:Name="lblDescription" Text="{Binding Description}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Text="Impact Desc:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="4" Grid.Column="1" x:Name="lblImpactdesc" Text="Impact Description" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
+                    <Image Source="drawable/category.png" Grid.Row="2" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="2" Grid.Column="1" Text="Category:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="lblCategory" Text="{Binding Category}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                <Label Grid.Row="5" Grid.Column="0" Text="Frequency:" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-                <Label Grid.Row="5" Grid.Column="1" x:Name="lblFrequency" Text="Frequency" FontSize="16" VerticalOptions="Center" Margin="0, 15, 0, 0"/>
-            </Grid>
+                    <Image Source="drawable/earthimpact.png" Grid.Row="3" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="3" Grid.Column="1" Text="Impact Level:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="3" Grid.Column="2" x:Name="lblImpactlvl" Text="{Binding ImpactLevel}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
+                    <Image Source="drawable/entry.png" Grid.Row="4" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="4" Grid.Column="1" Text="Impact Description:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="4" Grid.Column="2" x:Name="lblImpactdesc" Text="{Binding ImpactDescription}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
+
+                    <Image Source="drawable/frequency.png" Grid.Row="5" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <Label Grid.Row="5" Grid.Column="1" Text="Frequency:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
+                    <Label Grid.Row="5" Grid.Column="2" x:Name="lblFrequency" Text="{Binding Frequency}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
+                </Grid>
+            </Frame>
+            <Button x:Name="contributeButton" Text="Contribute"  Clicked="OnUpdateProgressClicked" Margin="0, 20, 0, 0"             
+     TextColor="White"
+     FontAttributes="Bold"
+     FontSize="14"
+     HorizontalOptions="Center"
+     VerticalOptions="Center"
+     WidthRequest="130"
+     HeightRequest="37"
+     CornerRadius="25"
+     BackgroundColor="#00d2ff"
+/>
+          
+
+             
+          <ProgressBar x:Name="progressBar" Progress="0" HeightRequest="20" Margin="0, 20, 0, 0"/>
+            
+            
             <AbsoluteLayout>
-                <Button Margin="110, 50, 0, 0"
-                    Text="BACK"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    WidthRequest="130"
-                    HeightRequest="37"
-                    CornerRadius="25"
-                    BackgroundColor="White"
-                    Clicked="Back">
+                <Button Margin="110, 30, 0, 0"
+              Text="BACK"
+              TextColor="White"
+              FontAttributes="Bold"
+              FontSize="14"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              WidthRequest="130"
+              HeightRequest="37"
+              CornerRadius="25"
+              BackgroundColor="White"
+              Clicked="Back">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="1,0">
                             <GradientStop Color="#B28E5D" Offset="0.1" />
@@ -59,10 +102,6 @@
                 </Button>
             </AbsoluteLayout>
 
-            <ProgressBar x:Name="progressBar" Progress="0" HeightRequest="20" Margin="20, 20, 20, 0"/>
-
-            <!-- Update Progress Button -->
-            <Button x:Name="contributeButton" Text="Contribute" Clicked="OnUpdateProgressClicked" Margin="20, 20, 20, 0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

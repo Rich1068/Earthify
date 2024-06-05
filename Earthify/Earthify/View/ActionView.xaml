@@ -4,14 +4,32 @@
              x:Class="Earthify.View.ActionView"
              BackgroundColor="#124076">
     <ContentPage.Content>
+        
         <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
 
             <!-- Image at the top -->
-            <Image Source="drawable/Logo.png"
+            <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
+               HorizontalOptions="Center" Margin="0,0,0,10"
+               WidthRequest="250" HeightRequest="250">
+                <Grid>
+                    <!-- Background Image -->
+                    <Image Source="ocean.png" Aspect="AspectFill" />
+                    <!-- Foreground Image -->
+                    <Image Source="drawable/TextWithLogo.png" 
+                       VerticalOptions="Center" 
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center" 
+                       Margin="10"/>
+                </Grid>
+            </Frame>
+
+            <!-- New Image below the logo -->
+            <Image Source="drawable/EarthLine.png"
                    Aspect="AspectFit"
-                   HeightRequest="200"
+                   HeightRequest="40"
                    HorizontalOptions="Center"
-                   Margin="0,0,0,20"/>
+                   Margin="0,1,0,5"/>
+
             <Frame BorderColor="green" CornerRadius="15" Padding="20" BackgroundColor="#FFFFFF">
                 <StackLayout>
 
@@ -24,7 +42,6 @@
                         <Entry x:Name="txtDescription" Placeholder="Enter Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
                     </Grid>
 
-         
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -43,7 +60,6 @@
                         </Picker>
                     </Grid>
 
-               
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -61,7 +77,6 @@
                             </Picker.ItemsSource>
                         </Picker>
                     </Grid>
-
 
                     <Grid VerticalOptions="CenterAndExpand" Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
@@ -92,19 +107,18 @@
                 </StackLayout>
             </Frame>
 
-
             <!-- Space between container and button -->
             <BoxView HeightRequest="30" />
 
             <!-- Button for Save Record -->
- <Button Text="Save Record" 
-        Clicked="btnSaveUpdate_Clicked"
-        BackgroundColor="#008000"
-        TextColor="#ffffff"
-        CornerRadius="15"
-        HeightRequest="40"
-        HorizontalOptions="Center"
-        FontSize="Small"/>
+            <Button Text="Save Record" 
+                    Clicked="btnSaveUpdate_Clicked"
+                    BackgroundColor="#008000"
+                    TextColor="#ffffff"
+                    CornerRadius="15"
+                    HeightRequest="40"
+                    HorizontalOptions="Center"
+                    FontSize="Small"/>
 
         </StackLayout>
     </ContentPage.Content>
