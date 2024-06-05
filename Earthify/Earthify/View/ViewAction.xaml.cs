@@ -38,21 +38,21 @@ namespace Earthify.View
             switch (action.Category.ToLower())
             {
                 case "trees":
-                    ActionImageUrl.Source = "wastecleaning.png";
+                    ActionImageUrl.Source = "drawable/treesplant.JPG";
                     break;
                 case "ocean":
-                    ActionImageUrl.Source = "new_background_image.png";
+                    ActionImageUrl.Source = "drawable/ocenas.jpg";
                     break;
                 case "waste":
-                    ActionImageUrl.Source = "new_background_image.png";
+                    ActionImageUrl.Source = "drawable/wastecleaning.jpg";
                     break;
                 case "miscellaneous":
-                    ActionImageUrl.Source = "new_background_image.png";
+                    ActionImageUrl.Source = "drawable/others.png";
                     break;
                 // Add more cases for other categories as needed
                 default:
                     // Set default images
-                    ActionImageUrl.Source = "new_background_image.png";
+                    ActionImageUrl.Source = "drawable/misc.png";
                     break;
             }
         }

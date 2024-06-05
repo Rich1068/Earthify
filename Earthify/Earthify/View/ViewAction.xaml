@@ -5,20 +5,16 @@
              x:Class="Earthify.View.ViewAction">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#124076" Padding="20">
-
-            <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
-                HorizontalOptions="Center" Margin="0,0,0,10"
-                 WidthRequest="350" HeightRequest="350">
+            <Frame CornerRadius="10" Padding="0">
                 <Grid>
                     <!-- Foreground Image -->
                     <ffimageloading:CachedImage x:Name="ActionImageUrl" 
-                     WidthRequest="300" HeightRequest="300"   
-                    VerticalOptions="Center" 
-                    Aspect="AspectFit"
-                    HorizontalOptions="Center" 
-                    Margin="10"/>       
+            VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand" 
+            Aspect="AspectFill" />
                 </Grid>
             </Frame>
+
 
             <Frame BackgroundColor="White" CornerRadius="10" Margin="0, 20, 0, 0">
                 <Grid Margin="20">
