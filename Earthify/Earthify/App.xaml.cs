@@ -18,8 +18,7 @@ namespace Earthify
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FromHex("#254336"),
-                BackgroundColor = Color.FromHex("#DAD3BE")
+                BarBackgroundColor = Color.FromHex("#2E8B57"),
             };
         }
 

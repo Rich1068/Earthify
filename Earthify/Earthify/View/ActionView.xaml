@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Earthify.View.ActionView"
              BackgroundColor="#124076">
     <ContentPage.Content>
@@ -24,7 +25,7 @@
             </Frame>
 
             <!-- New Image below the logo -->
-            <Image Source="drawable/EarthLine.png"
+            <ffimageloading:CachedImage Source="drawable/EarthLine.png"
                    Aspect="AspectFit"
                    HeightRequest="40"
                    HorizontalOptions="Center"
@@ -47,7 +48,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="drawable/category.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <ffimageloading:CachedImage Source="drawable/category.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Picker x:Name="txtCategory" Title="Select Category" HorizontalOptions="FillAndExpand" TextColor="#008000" FontSize="Small" BackgroundColor="Transparent" Grid.Column="1">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
@@ -65,7 +66,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="drawable/earthimpact.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <ffimageloading:CachedImage Source="drawable/earthimpact.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Picker x:Name="txtImpactlvl" Title="Select Impact Level" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
@@ -83,7 +84,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="drawable/entry.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <ffimageloading:CachedImage Source="drawable/entry.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Entry x:Name="txtImpactdesc" Placeholder="Enter Impact Description" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1"/>
                     </Grid>
 
@@ -92,7 +93,7 @@
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="drawable/frequency.png" HeightRequest="24" VerticalOptions="Center"/>
+                        <ffimageloading:CachedImage Source="drawable/frequency.png" HeightRequest="24" VerticalOptions="Center"/>
                         <Picker x:Name="txtFrequency" Title="Select Frequency" HorizontalOptions="FillAndExpand" TextColor="#008000" BackgroundColor="Transparent" FontSize="Small" Grid.Column="1">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">

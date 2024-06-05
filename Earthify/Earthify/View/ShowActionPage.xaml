@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Earthify.View.ShowActionPage"
              BackgroundColor="#124076">
 
@@ -11,9 +12,9 @@
                    HorizontalOptions="Center" Margin="0,0,0,10">
                 <Grid WidthRequest="500" HeightRequest="400">
                     <!-- Background Image -->
-                    <Image Source="trees.png" Aspect="AspectFill" />
+                    <ffimageloading:CachedImage Source="trees.png" Aspect="AspectFill" />
                     <!-- Foreground Image -->
-                    <Image Source="drawable/textearth.png" 
+                    <ffimageloading:CachedImage Source="drawable/textearth.png" 
                            VerticalOptions="Center" 
                            Aspect="AspectFit"
                            HorizontalOptions="Center" 
@@ -42,7 +43,7 @@
                         <Label Text="Impact Level" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
                         <Label Text="Frequency" TextColor="#124076" FontAttributes="Bold" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
                     </Grid>
-                    <Image Source="drawable/EarthLine.png" 
+                    <ffimageloading:CachedImage Source="drawable/EarthLine.png" 
                            VerticalOptions="Start" 
                            Aspect="AspectFit"
                            HeightRequest="30"
