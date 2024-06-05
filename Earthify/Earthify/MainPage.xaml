@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Earthify.MainPage">
 
     <StackLayout BackgroundColor="#124076">
         <CarouselView x:Name="Carousel" BackgroundColor="Black" IndicatorView="IndicatorView" HeightRequest="1080">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding Url}" Aspect="AspectFill"/>
+                    <ffimageloading:CachedImage Source="{Binding Url}" Aspect="AspectFill"/>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
 
-        <Button Text="Contribute Now" TextColor="white" BackgroundColor="green" Margin="15,10,15,10" CornerRadius="10" HorizontalOptions="FillAndExpand"  Clicked="btnViewRecord_Clicked" />
+        <Button Text="Contribute Now" TextColor="White" BackgroundColor="Green" Margin="15,10,15,10" CornerRadius="10" HorizontalOptions="FillAndExpand"  Clicked="btnViewRecord_Clicked" />
 
         <IndicatorView x:Name="IndicatorView"
             IndicatorColor="Transparent"

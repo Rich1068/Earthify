@@ -33,9 +33,28 @@ namespace Earthify.View
             lblImpactdesc.Text = action.Impact_Description;
             lblFrequency.Text = action.Frequency;
 
-            SetBackgroundColor(action.Category);
-
             progressIncrement = ConvertFrequencyToProgressIncrement(action.Frequency);
+
+            switch (action.Category.ToLower())
+            {
+                case "trees":
+                    ActionImageUrl.Source = "wastecleaning.png";
+                    break;
+                case "ocean":
+                    ActionImageUrl.Source = "new_background_image.png";
+                    break;
+                case "waste":
+                    ActionImageUrl.Source = "new_background_image.png";
+                    break;
+                case "miscellaneous":
+                    ActionImageUrl.Source = "new_background_image.png";
+                    break;
+                // Add more cases for other categories as needed
+                default:
+                    // Set default images
+                    ActionImageUrl.Source = "new_background_image.png";
+                    break;
+            }
         }
 
         private double ConvertFrequencyToProgressIncrement(string frequency)
@@ -55,28 +74,6 @@ namespace Earthify.View
             }
         }
 
-        private void SetBackgroundColor(string category)
-        {
-            Color backgroundColor;
-
-            switch (category.ToLower())
-            {
-                case "trees":
-                    backgroundColor = Color.LightGreen;
-                    break;
-                case "ocean":
-                    backgroundColor = Color.LightBlue;
-                    break;
-                case "Miscellaneous":
-                    backgroundColor = Color.Beige;
-                    break;
-                default:
-                    backgroundColor = Color.White;
-                    break;
-            }
-
-       
-        }
 
         private async void OnUpdateProgressClicked(object sender, EventArgs e)
         {

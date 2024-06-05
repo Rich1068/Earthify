@@ -1,23 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Earthify.View.ViewAction">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#124076" Padding="20">
 
             <Frame CornerRadius="10" Padding="0" IsClippedToBounds="True"
-               HorizontalOptions="Center" Margin="0,0,0,10"
-               WidthRequest="350" HeightRequest="350">
+                HorizontalOptions="Center" Margin="0,0,0,10"
+                 WidthRequest="350" HeightRequest="350">
                 <Grid>
-                    <!-- Background Image -->
-                    <Image Source="wastecleaning.png" Aspect="AspectFill" />
                     <!-- Foreground Image -->
-                    <Image Source="drawable/logoblack.png" 
-                        WidthRequest="300" HeightRequest="300"   
-                       VerticalOptions="Center" 
-                       Aspect="AspectFit"
-                       HorizontalOptions="Center" 
-                       Margin="10"/>
+                    <ffimageloading:CachedImage x:Name="ActionImageUrl" 
+                     WidthRequest="300" HeightRequest="300"   
+                    VerticalOptions="Center" 
+                    Aspect="AspectFit"
+                    HorizontalOptions="Center" 
+                    Margin="10"/>       
                 </Grid>
             </Frame>
 
@@ -38,27 +37,27 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Image Source="drawable/id.png" Grid.Row="0" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/id.png" Grid.Row="0" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="0" Grid.Column="1" Text="Action Code:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="0" Grid.Column="2" x:Name="lblActionCode" Text="{Binding ActionCode}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                    <Image Source="drawable/description.png" Grid.Row="1" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/description.png" Grid.Row="1" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="1" Grid.Column="1" Text="Description:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="1" Grid.Column="2" x:Name="lblDescription" Text="{Binding Description}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                    <Image Source="drawable/category.png" Grid.Row="2" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/category.png" Grid.Row="2" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="2" Grid.Column="1" Text="Category:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="2" Grid.Column="2" x:Name="lblCategory" Text="{Binding Category}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                    <Image Source="drawable/earthimpact.png" Grid.Row="3" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/earthimpact.png" Grid.Row="3" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="3" Grid.Column="1" Text="Impact Level:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="3" Grid.Column="2" x:Name="lblImpactlvl" Text="{Binding ImpactLevel}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                    <Image Source="drawable/entry.png" Grid.Row="4" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/entry.png" Grid.Row="4" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="4" Grid.Column="1" Text="Impact Description:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="4" Grid.Column="2" x:Name="lblImpactdesc" Text="{Binding ImpactDescription}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
 
-                    <Image Source="drawable/frequency.png" Grid.Row="5" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
+                    <ffimageloading:CachedImage Source="drawable/frequency.png" Grid.Row="5" Grid.Column="0" HeightRequest="20" VerticalOptions="Center"/>
                     <Label Grid.Row="5" Grid.Column="1" Text="Frequency:" FontAttributes="Bold" FontSize="16" VerticalOptions="Center" TextColor="#124076"/>
                     <Label Grid.Row="5" Grid.Column="2" x:Name="lblFrequency" Text="{Binding Frequency}" FontSize="14" VerticalOptions="Center" TextColor="#124076" Margin="20,0,0,0"/>
                 </Grid>
@@ -74,12 +73,12 @@
      CornerRadius="25"
      BackgroundColor="#00d2ff"
 />
-          
 
-             
-          <ProgressBar x:Name="progressBar" Progress="0" HeightRequest="20" Margin="0, 20, 0, 0"/>
-            
-            
+
+
+            <ProgressBar x:Name="progressBar" Progress="0" ScaleY="3" Margin="0, 20, 0, 0"/>
+
+
             <AbsoluteLayout>
                 <Button Margin="110, 30, 0, 0"
               Text="BACK"

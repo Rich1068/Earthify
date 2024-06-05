@@ -5,6 +5,8 @@ using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FFImageLoading;
+using FFImageLoading.Forms;
 
 namespace Earthify
 {
@@ -14,7 +16,6 @@ namespace Earthify
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new MainPage())
             {
                 BarBackgroundColor = Color.FromHex("#254336"),
